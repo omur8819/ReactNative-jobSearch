@@ -27,7 +27,7 @@ const Jobs = (props) => {
     return (
         <SafeAreaView>
             <View>
-                <Text>JOBS</Text>
+                <Text style={{textAlign: 'center', fontWeight: 'bold'}}>JOBS  for {selectedLanguage.toUpperCase()}</Text>
                 <FlatList 
                     data={data}
                     renderItem={renderJobs}
