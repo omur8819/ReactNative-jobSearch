@@ -1,5 +1,7 @@
 import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {SafeAreaView, View, Text, ScrollView } from 'react-native';
+
+import { TopicItem } from '../components';
 
 const topics = [
   {
@@ -33,17 +35,17 @@ const topics = [
     color: 'f8961e'
   },
   {
-    id: 5,
+    id: 6,
     name: 'Ruby',
     color: 'e63946'
   },
   {
-    id: 6,
+    id: 7,
     name: 'C',
     color: 'fb8b24'
   },
   {
-    id: 7,
+    id: 8,
     name: 'C++',
     color: '06d6a0'
   },
@@ -52,9 +54,19 @@ const topics = [
 
 const Introduction = (props) => {
   return (
-    <SafeAreaView>
-      <View>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={{flex: 1}}>
         <Text>INTRODUCTION</Text>
+
+        <ScrollView>
+            {
+                topics.map(topic => {
+                return <TopicItem 
+                    key={topic.id} item={topic} 
+                    
+                        />
+            })}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
