@@ -52,13 +52,13 @@ const Jobs = (props) => {
             fontWeight: 'bold',
             fontSize: 20,
           }}>
-          JOBS for {selectedLanguage.toUpperCase()}
+          JOBS FOR {selectedLanguage.toUpperCase()}
         </Text>
         <FlatList data={data} renderItem={renderJobs} />
 
         <TouchableOpacity
           style={{
-            backgroundColor: '#0097a7',
+            backgroundColor: 'blue',
             padding: 10,
             borderRadius: 10,
             position: 'absolute',
@@ -67,7 +67,7 @@ const Jobs = (props) => {
           }}
           onPress={() => props.navigation.navigate("SavedJobs")}
         >
-          <Text style={{color: 'white', backgroundColor: '#0097a7'}}>See Saved Jobs</Text>
+          <Text style={{color: 'white'}}>See saved jobs</Text>
         </TouchableOpacity>
 
         <Modal isVisible={modalFlag} onBackdropPress={() => setModalFlag(false)}>
@@ -82,7 +82,7 @@ const Jobs = (props) => {
             <View style={jobs.jobDesc}>
               <Text numberOfLines={5}>{selectedJob.description}</Text>
             </View>
-            <Button title="Save" onPress={onJobSave} />
+            <Button title="Kaydet" onPress={onJobSave} />
           </View>
         </Modal>
       </View>
